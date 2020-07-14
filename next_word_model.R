@@ -20,7 +20,7 @@ match_ngram1 <- function(y){
         num <- nrow(y)
         match <- which(grepl(y[num,1], ngram1$word))
         nextword <- ngram1[match[1]+1, 1]
-        return(nextword)
+        ifelse(is.na(nextword), "the", return(nextword))
 }
 
 
