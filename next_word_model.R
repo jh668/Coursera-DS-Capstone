@@ -16,10 +16,18 @@ input_words <- function(x){
 }
 
 # match ngram
+match_ngram1 <- function(y){
+        num <- nrow(y)
+        match <- which(grepl(y[num,1], ngram1$word))
+        nextword <- ngram1[match[1]+1, 1]
+        return(nextword)
+}
+
+
 match_ngram2 <- function(y){
         num <- nrow(y)
         nextword <- subset(ngram2, word1 == y[num,1])[1,2]
-        ifelse(is.na(nextword), ".", return(nextword))
+        ifelse(is.na(nextword), match_ngram1(y), return(nextword))
 }
 
 match_ngram3 <- function(y){

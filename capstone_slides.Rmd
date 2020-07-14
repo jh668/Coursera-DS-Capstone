@@ -20,12 +20,12 @@ This project is to apply data science in the area of natural language processing
 
 
 ## The Prediction Algorithm
-The prediction algorithm is created based on the N-gram language modeling method. Here are the major steps:
+The prediction algorithm is created based on the N-gram language modeling method:
 
-1. Create a training corpus from sampling a total of 30,000 lines from training dataset, which is composed of data sourced from twitter, news, and blogs.
-2. Use the text mining functions provided by the tm package to clean the training corpus including removing the profanity words.
-3. Generate and explore the frequencies of the n-grams, namely uni-gram, bi-grams (two words), tri-grams (three words), and quad-grams (four words) from the training corpus.
-4. Create a predition model based on a simple backoff method: matching the n-gram data from the higher-order (e.g. quad-grams) to the lower-order (e.g. uni-grams)
+- It predicts from up to the three last words of the input text.
+- It is a 4-gram language model.
+- It is based on a simple backoff method: matching the n-gram data from the higher-order (e.g. quad-grams) to the lower-order (e.g. bi-grams)
+- The bi-grams, tri-grams, and quad-grams are developed from a sample corpus based on a training sample dataset (213,483 lines) from the coursera training data, which is composed of data sourced from twitter, news and blogs.
 
 
 ## The App
